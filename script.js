@@ -1,25 +1,17 @@
-let time = 4;
+let time = 2;
 let remainingTime = 3;
 function slide() {
-    $('.block').slideDown(3000).delay(1000).slideUp(3000);
-   
+    $('.block').slideDown(3000).delay(100).slideUp(3000);
+    $('.num').text(remainingTime)
+    remainingTime--;
 };
 
-// function changeTime(){
-//     $('.num').text(remainingTime);
-// }
-
-
-function ahd(){
-    for (let i = 3; i < time; i++) {
-        console.log(i)
-        $('.num').text(i)
-        slide();
-    }
-}
 
 $('.block').on('click', function () {
-    ahd()
+    for (let i = 0; i <= time; i++) {
+        console.log(i)
+        slide();
+    }
 });
 
 
