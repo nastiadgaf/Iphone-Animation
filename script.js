@@ -1,17 +1,25 @@
-let time = 2;
-let remainingTime = 3;
-function slide() {
-    $('.block').slideDown(3000).delay(100).slideUp(3000);
-    $('.num').text(remainingTime)
-    remainingTime--;
+let time = 1;
+let remainingTime = 2;
+const slide = () => {
+    $('.block').slideUp(30000).delay(1000).slideDown(30000);
+    --time;
 };
 
-
 $('.block').on('click', function () {
-    for (let i = 0; i <= time; i++) {
-        console.log(i)
+    minusRemainingTime();
+    secondMinusRemainingTime();
+    while(time >= 0){
         slide();
     }
 });
 
+function minusTime() {
+    if(remainingTime > 0){
+        --remainingTime;
+        $('.num').text(remainingTime)
+    } 
+}
+
+const minusRemainingTime = () => setTimeout(minusTime, 61000);
+const secondMinusRemainingTime = () => setTimeout(minusTime, 122000);
 
